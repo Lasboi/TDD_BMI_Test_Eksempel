@@ -29,4 +29,39 @@ public class BmiTest extends TestCase {
         assertEquals(-1.0, resultat);
     }
 
+    /** Tester maximum vægt */
+    public void testBmiBeregningMaximumWeight() {
+        double resultat;
+        resultat = Bmi.bmiBeregning(2, 300);
+        assertEquals(75.0, resultat);
+    }
+
+    /** Tester minimum vægt */
+    public void testBmiBeregningMinimumWeight() {
+        double resultat;
+        resultat = Bmi.bmiBeregning(2, 1);
+        assertEquals(0.3, resultat);
+    }
+
+    /** Tester 0 som vægt */
+    public void testBmiBeregningDivisionBy0Weight() {
+        double resultat;
+        resultat = Bmi.bmiBeregning(2, 0);
+        assertEquals(0.0, resultat);
+    }
+
+    /** Tester maximum vægt */
+    public void testBmiBeregningMaximumWeightAndHeight() {
+        double resultat;
+        resultat = Bmi.bmiBeregning(3.01, 300);
+        assertEquals(-1.0, resultat);
+    }
+
+    /** Tester minimum vægt */
+    public void testBmiBeregningMinimumWeightAndHeight() {
+        double resultat;
+        resultat = Bmi.bmiBeregning(3.01, 1);
+        assertEquals(-1.0, resultat);
+    }
+
 }
